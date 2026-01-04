@@ -1,4 +1,4 @@
-from portfolio.sections import ExperienceItem, HeaderDetails, SectionList
+from portfolio.models import ExperienceItem, HeaderDetails, SectionList
 
 
 neo4j_link = "[Neo4j Graph Summit Stockholm 2023](https://neo4j.com/videos/volvo-cars-retrieving-safety-insights-using-graphs/)"
