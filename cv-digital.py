@@ -1,6 +1,6 @@
 from pathlib import Path
 from cv_builder.content import WorkDetails, EducationDetails, HeaderDetails, QualificationDetails, SkillsDetails
-from cv_builder.sections import add_experience_section, add_list_section, add_social_links, add_rng_stars
+from cv_builder.sections import add_experience_section, add_list_section, add_social_links
 import streamlit as st
 from PIL import Image
 import os
@@ -12,11 +12,7 @@ resume_file = os.path.join(current_dir, "assets", "csv.pdf")
 resume_photo = os.path.join(current_dir, "assets", "csv-photo.jpg")
 
 # --- GENERAL SETTINGS ---
-st.set_page_config(page_title="Professional CV", 
-                   page_icon=":wave:",
-                   layout="centered", 
-                   initial_sidebar_state="expanded") # --- GENERAL SETTINGS ---
-st.set_page_config(page_title="Professional CV", 
+st.set_page_config(page_title="Digital CV", 
                    page_icon=":wave:",
                    layout="centered", 
                    initial_sidebar_state="expanded") 
@@ -27,9 +23,6 @@ st.set_page_config(page_title="Professional CV",
 with open(resume_file, "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 profile_pic = Image.open(resume_photo)
-
-st.sidebar.title("Navigation") # Add a title to the sidebar
-st.sidebar.write("Use the sidebar for controls.")
 
 # --- HERO SECTION ---
 col_left, col_right = st.columns([1, 2], gap=None)
