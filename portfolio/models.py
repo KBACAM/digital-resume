@@ -1,19 +1,6 @@
 from dataclasses import dataclass, field
 from typing import Union, List, Dict, Optional
 
-
-@dataclass 
-class RatingItem:
-    """
-    Data class for skill rating details.
-    Parameters:
-    - skill: Name of the skill
-    - rating: Rating value (1-5)
-    """
-    skill: str = "Skill Name"
-    rating: int = 3  # Rating from 1 to 5
-
-
 @dataclass
 class ExperienceItem: 
     """
@@ -97,93 +84,33 @@ class HeaderDetails:
         {self.description}
         </div> 
         """
-
-
+    
+        
 @dataclass
 class SectionList: 
     header: str = "Header"
     items: List[str] = field(default_factory=lambda: ["Item 1", "Item 2", "Item 3"])
 
-def add_list_section(
-        st: any,
-        section: SectionList
-    ) -> str:
-    """
-    Adds a list section to a Streamlit app.
-    Parameters:
-    - st: Streamlit module
-    - section: SectionList dataclass
-    """
-    st.header(section.header)
-    for item in section.items:
-        st.write(f"- {item}")
-    st.write('\n')
 
-def add_experience_section(
-        st: any,
-        header: str,
-        experiences: List[ExperienceItem]
-    ) -> str:
-    """
-    Adds experience sections to a Streamlit app.
-    Parameters:
-    - st: Streamlit module
-    - experiences: List of ExperienceItem
-    """
-    st.header(header)
-    for exp in experiences:
+@dataclass
+class Reference:
+    ref: str  # Short name for the reference
+    text: str  # Text for the link
+    link: str  # URL for the link
+    title: Optional[str] = None  # Optional title for the reference
+    citation: Optional[str] = None  # Optional citation information
 
-        text_left, text_right = st.columns([4,1])
-        with text_left:
-            st.markdown(
-                exp.title_html,
-                unsafe_allow_html=True)
-            st.markdown(
-                exp.company_location_html,
-                unsafe_allow_html=True)
-        with text_right:
-            st.markdown(
-                exp.year_html,
-                unsafe_allow_html=True
-            )
-        st.markdown(
-            exp.description, 
-            unsafe_allow_html=True)
-        
-        st.markdown('\n')
+    @property
+    def md(self):
+        """Return the markdown formatted string [text](link)."""
+        return f"[{self.text}]({self.link})"  # Custom markdown format
 
-def add_social_links(
-        st: any,
-        social_media: Dict[str, str]
-    ) -> str:
-    """
-    Adds social media links to a Streamlit app.
-    Parameters:
-    - st: Streamlit module
-    - social_media: Dictionary of social media platform names and URLs
-    """
-    cols = st.columns(len(social_media))
-    for index, (platform, link) in enumerate(social_media.items()):
-        cols[index].write(f"[{platform}]({link})")
+@dataclass
+class MdReferences:
+    references: List[Reference] = field(default_factory=list)
 
-
-def add_rating_stars(
-        st: any,
-        header: str,
-        ratings: List[RatingItem]
-):
-    """
-    Adds a rating stars section to a Streamlit app.
-    Parameters:
-    - st: Streamlit module
-    - header: Section header
-    - ratings: List of RatingItem
-    """
-    st.header(header)
-    for item in ratings:
-        st.feedback(
-            options= "stars",
-            key = item.skill,
-            disabled = True, 
-            default = item.rating - 1
-        )
+    def __post_init__(self):
+        """Automatically create dynamic attributes for each reference using 'ref'."""
+        for reference in self.references:
+            # Dynamically create an attribute for each reference based on `ref`
+            setattr(self, reference.ref, reference)
