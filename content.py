@@ -1,10 +1,54 @@
-from cv_builder.sections import ExperienceItem, HeaderDetails, SectionList
+from portfolio.models import ExperienceItem, HeaderDetails, SectionList, MdReferences, Reference
 
-
-neo4j_link = "[Neo4j Graph Summit Stockholm 2023](https://neo4j.com/videos/volvo-cars-retrieving-safety-insights-using-graphs/)"
-aiaware_link = "[AI Aware Scale Up](https://www.drivesweden.net/en/project/ai-aware-scale)"
-genie_link = "[Gender Initiative for Excellence (Genie)](https://www.chalmers.se/en/about-chalmers/organisation-and-governance/equality-at-chalmers/genie-gender-initiative-for-excellence/)"
-plp_link = "[Conference Publication](https://pubmed.ncbi.nlm.nih.gov/34891394/)"
+RefList = MdReferences(references=[
+    Reference(
+        ref="neo4j_video",
+        text="Neo4j Graph Summit Stockholm 2023",
+        link="https://neo4j.com/videos/volvo-cars-retrieving-safety-insights-using-graphs/"
+    ),
+    Reference(
+        ref="plp",
+        text="Conference Publication",
+        title="Common Spatial Pattern EEG decomposition for Phantom Limb Pain detection",
+        link="https://ieeexplore.ieee.org/document/9630561",
+        citation="""
+        Lendaro, E., Balouji, E., Baca, K., Muhammad A. and Ortiz-Catalan, M. (2021).
+        Common Spatial Pattern EEG decomposition for Phantom Limb Pain detection, 
+        2021 43rd Annual International Conference of the IEEE Engineering in Medicine & Biology Society (EMBC), Mexico, 2021, pp. 726-729.
+"""
+    ), 
+    Reference(
+        ref="genie",
+        text="Gender Initiative for Excellence (Genie)",
+        link="https://www.chalmers.se/en/about-chalmers/organisation-and-governance/equality-at-chalmers/genie-gender-initiative-for-excellence/",
+    ), 
+    Reference(
+        ref="genie_pub",
+        text="Acknowledgment (Genie Initiative)",
+        link="http://dx.doi.org/10.1017/qrd.2021.3",
+        citation = """
+        Saline, M., Sheeran, M., Wittung Stafshede, P. (2021). 
+        A large ‘discovery’ experiment: Gender Initiative for Excellence (Genie) at Chalmers University of Technology. QRB Discovery, 2. <br>
+        http://dx.doi.org/10.1017/qrd.2021.3
+        """
+        ),     
+    Reference(
+        ref="aiaware",
+        text="AI Aware Scale Up",
+        link="https://www.drivesweden.net/en/project/ai-aware-scale"
+    ), 
+    Reference(
+        ref="masterThesis",
+        text="Master's Thesis",
+        link="https://odr.chalmers.se/server/api/core/bitstreams/f9286796-aa99-4b14-9858-3f4bbe308c46/content",
+        citation="""
+        Baca, K., Söderkvist, W. (2019).
+        Discovering Patterns in Driving Data.
+        Master's Thesis, Chalmers University of Technology. Chalmers ODR. <br>
+        https://odr.chalmers.se/server/api/core/bitstreams/f9286796-aa99-4b14-9858-3f4bbe308c46/content
+         """
+    )
+])
 
 WorkDetails: list[ExperienceItem] = [
 
@@ -40,8 +84,8 @@ WorkDetails: list[ExperienceItem] = [
             Analyzed the relationship between overall customer satisfaction (CSAT) and retailer car delivery throughput in the UK, and developed a new Medallia-based survey program to measure consumer-facing employee satisfaction.
 
              - **Open Innovation Arena** <br>
-            Participated in the {aiaware_link} project by collaborating on the design a graph data model for the analysis of Swedish traffic accidents in Neo4j.
-            Data sources included information such as weather, friction, road infrastructure and historical accidents. Results were presented in the Volvo Cars Graph Day 2023 and {neo4j_link}.
+            Participated in the {RefList.aiaware.md} project by collaborating on the design a graph data model for the analysis of Swedish traffic accidents in Neo4j.
+            Data sources included information such as weather, friction, road infrastructure and historical accidents. Results were presented in the Volvo Cars Graph Day 2023 and {RefList.neo4j_video.md}.
 
              - **Advanced Analytics and AI** <br>
             Exploration and implementation of an evaluation metric for car sales forecast. <br>
@@ -61,9 +105,9 @@ WorkDetails: list[ExperienceItem] = [
             Group founded by Chalmers AI Research Center (CHAIR) for supporting data-related academic projects. Some of the projects I took part of were:
 
             - Survival Analysis to investigate causally related factors (e.g. gender and age) of academia turnover. 
-            This project was founded by the {genie_link}.
+            This project was founded by the {RefList.genie.md}.
 
-            - Analysis and classification of electrical brain activity to study Phantom Limb Pain using time series and image based feature extraction methods (see {plp_link}).
+            - Analysis and classification of electrical brain activity to study Phantom Limb Pain using time series and image based feature extraction methods (see {RefList.plp.md}).
 
             - Analysis of COVID-19 patients data for forecasting hospital admissions. This project was in collaboration with Sahlgrenska University Hospital.
             """
@@ -121,3 +165,7 @@ SkillsDetails = SectionList(
         "📚 Modeling: Regression, Survival Analysis, Clustering"
     ]
 )
+
+
+
+

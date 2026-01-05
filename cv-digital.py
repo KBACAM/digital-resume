@@ -1,6 +1,6 @@
 from pathlib import Path
-from cv_builder.content import WorkDetails, EducationDetails, HeaderDetails, QualificationDetails, SkillsDetails
-from cv_builder.sections import add_experience_section, add_list_section, add_social_links
+from content import WorkDetails, EducationDetails, HeaderDetails, QualificationDetails, SkillsDetails
+from portfolio.management import add_experience_section, add_list_section, add_social_links
 import streamlit as st
 from PIL import Image
 import os
