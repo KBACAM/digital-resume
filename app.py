@@ -2,8 +2,8 @@ import streamlit as st
 
 pg = st.navigation(
     [
-        st.Page("cv-digital.py", title= "Digital CV", icon="📄"),
-        st.Page("contributions.py", title= "Contributions", icon="🏆"), 
+        st.Page("pages/cv-digital.py", title= "Digital CV", icon="📄"),
+        st.Page("pages/contributions.py", title= "Contributions", icon="🏆"), 
     ]
 )
 
