@@ -1,6 +1,6 @@
 from pathlib import Path
-from portfolio.content import WorkDetails, EducationDetails, HeaderDetails, QualificationDetails, SkillsDetails
-from portfolio.models import add_experience_section, add_list_section, add_social_links
+from content import WorkDetails, EducationDetails, HeaderDetails, QualificationDetails, SkillsDetails
+from portfolio.management import add_experience_section, add_list_section, add_social_links
 import streamlit as st
 from PIL import Image
 import os
