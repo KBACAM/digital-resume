@@ -6,10 +6,9 @@ from PIL import Image
 import os
 
 # -- path settings
-current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
-css_file = os.path.join(current_dir, "styles", "main.css")
-resume_file = os.path.join(current_dir, "assets", "csv.pdf")
-resume_photo = os.path.join(current_dir, "assets", "csv-photo.jpg")
+css_file = os.path.join("styles", "main.css")
+resume_file = os.path.join("assets", "csv.pdf")
+resume_photo = os.path.join("assets", "csv-photo.jpg")
 
 # --- GENERAL SETTINGS ---
 st.set_page_config(page_title="Digital CV", 
