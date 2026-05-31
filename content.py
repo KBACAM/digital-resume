@@ -17,7 +17,7 @@ RefList = MdReferences(references=[
         2021 43rd Annual International Conference of the IEEE Engineering in Medicine & Biology Society (EMBC), Mexico, 2021, pp. 726-729.
 """
     ), 
-    Reference(
+    Reference( 
         ref="genie",
         text="Gender Initiative for Excellence (Genie)",
         link="https://www.chalmers.se/en/about-chalmers/organisation-and-governance/equality-at-chalmers/genie-gender-initiative-for-excellence/",
@@ -75,7 +75,7 @@ WorkDetails: list[ExperienceItem] = [
         yearEnd=2023,
         description=(
             f"""
-            24-months career boosting program designed to develop our potential as future leaders. During this time I got the opportunity to work with the next assignments:
+            A 24-month career boosting program designed to build future leadership potential. During the program I worked on the following assignments:
 
              - **APAC Data and Analytics** <br>
             Investigating false positive Diagnostic Trouble Codes using Machine Learning techniques.
@@ -84,11 +84,11 @@ WorkDetails: list[ExperienceItem] = [
             Analyzed the relationship between overall customer satisfaction (CSAT) and retailer car delivery throughput in the UK, and developed a new Medallia-based survey program to measure consumer-facing employee satisfaction.
 
              - **Open Innovation Arena** <br>
-            Participated in the {RefList.aiaware.md} project by collaborating on the design a graph data model for the analysis of Swedish traffic accidents in Neo4j.
+            Participated in the {RefList.aiaware.md} project by collaborating on the design of a graph data model for the analysis of Swedish traffic accidents in Neo4j.
             Data sources included information such as weather, friction, road infrastructure and historical accidents. Results were presented in the Volvo Cars Graph Day 2023 and {RefList.neo4j_video.md}.
 
              - **Advanced Analytics and AI** <br>
-            Exploration and implementation of an evaluation metric for car sales forecast. <br>
+            Exploration and implementation of an evaluation metric for car sales forecasting. <br>
             Predictions were evaluated using a hierarchical approach based on different car variant levels such as model, trim and model year.
             """
 
@@ -102,14 +102,14 @@ WorkDetails: list[ExperienceItem] = [
         yearEnd=2021,
         description=(
             f"""
-            Group founded by Chalmers AI Research Center (CHAIR) for supporting data-related academic projects. Some of the projects I took part of were:
+            Worked in a group founded by the Chalmers AI Research Center (CHAIR) to support data-related academic projects. Projects I contributed to included: 
 
-            - Survival Analysis to investigate causally related factors (e.g. gender and age) of academia turnover. 
-            This project was founded by the {RefList.genie.md}.
+            - Survival Analysis to investigate factors related to academia turnover (e.g. gender and age). 
+            This project was funded by the {RefList.genie.md}.
 
-            - Analysis and classification of electrical brain activity to study Phantom Limb Pain using time series and image based feature extraction methods (see {RefList.plp.md}).
+            - Analysis and classification of electrical brain activity to study Phantom Limb Pain using time series and image-based feature extraction methods (see {RefList.plp.md}).
 
-            - Analysis of COVID-19 patients data for forecasting hospital admissions. This project was in collaboration with Sahlgrenska University Hospital.
+            - Analysis of COVID-19 patient data for forecasting hospital admissions. This project was in collaboration with Sahlgrenska University Hospital.
             """
         )
     )
@@ -138,10 +138,10 @@ EducationDetails: list[ExperienceItem] = [
 HeaderDetails = HeaderDetails(
     name="Karen Baca",
     title= "Data Scientist | Data Enthusiast",
-    description="With experience in the automotive industry and academia, I have been involved in multiple data-related projects, gaining valuable experience on creating and communicating insights.",
+    description="With experience in the automotive industry and academia, working across data collection, analytics, machine learning, and insight communication",
     social_media={
         "LinkedIn": "https://linkedin.com/in/karenbaca",
-        "GitHub": "https://github.com/KBACAM",
+        "Git": "https://git.w7d.net/karen.baca",
         f"📫 karen@bacawik.com": f"mailto:karen@bacawik.com"
     }
 )
@@ -150,10 +150,10 @@ QualificationDetails = SectionList(
     header="Qualifications",
     items=[
         "✔️ 2 Years supporting data-related academic projects as Research Engineer",
-        "✔️ 4 Years experience extracting actionable insights from data in the automotive industry",
-        "✔️ Strong hands on experience and knowledge in Python and SQL",
+        "✔️ 5 Years experience extracting actionable insights from data in the automotive industry",
+        "✔️ Strong hands-on experience and knowledge in Python and SQL",
         "✔️ Good understanding of statistical principles and their respective applications",
-        "✔️ Excellent team-player and displaying strong sense of initiative on tasks"
+        "✔️ Strong team player with a high sense of initiative and ownership "
     ]
 )
 
@@ -162,7 +162,8 @@ SkillsDetails = SectionList(
     items=[
         "👩‍💻 Programming: Python (Scikit-learn, Pandas, PySpark), SQL, Go",
         "📊 Data Visualization: Plotly, Matplotlib, Seaborn, Power BI",
-        "📚 Modeling: Regression, Survival Analysis, Clustering"
+        "🛠️ Data Tools: Databricks, Neo4j, Jupyter Notebooks, Git",
+        "📚 Modeling: Regression, Survival Analysis, Clustering, Neural Networks."
     ]
 )
 
